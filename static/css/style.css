@@ -1,0 +1,45 @@
+body {
+
+    color: #f7f7f7;
+  }
+  .jumbotron {
+    background-image: url("/static/images/spaceneedle.jpg");
+    background-size: cover;
+    background-position: 0% 15%;
+    height: 350px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size:40px;
+  }
+
+  h3 {
+    font-size:100px;
+  } */
+
+h1 {
+  font-size: 100px;
+}
+  
+h2 {
+  font-size: 30px;
+}
+  
+p {
+  font-size: 16px;
+}
+  #map {
+    height: 800px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
+  

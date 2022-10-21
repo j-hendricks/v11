@@ -1,0 +1,103 @@
+<!-- 
+This version works with buildMap to populate the map with markers based on filters applied.
+We'll need to figure out how to merge.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seattle Airbnb</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="bg-dark">
+    <div class="wrapper">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">Seattle Airbnb Prices</a>
+        </nav>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Find Your Perfect Stay in Seattle
+        </h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"> 
+                <h3 style="color:white">Seattle Airbnb <small><br>Find Your Perfect Stay</small></h3>
+            </div>
+            <div class="col-md-8">
+                <p style="color:white">
+                Would you like to visit Seattle? Experience attractions such as the Space Needle? Maybe you would like to visit beautiful Mt. Rainer? Let planning and budgeting be one less worry and use this interactive tool to help budget your future stay!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <form action="/predict" method="POST">
+              <label for="listing_id" style="color:white"> Listing ID </label>
+              <input type="number" step="1" id="listing_id" name="listing_id">
+              <br>
+              <label for="month" style="color:white"> Month </label>
+              <input type="number" step="1" id="month" name="month">
+              <br>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div id="map" class="col-md-8"></div>
+
+          <!-- <div class="col-md-9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d204910.42530385818!2d-122.35105165373827!3d47.561573506275536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1665593948805!5m2!1sen!2sus" width="100%" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div> -->
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Listing Id</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Accommodates</th>
+            <th>Bathrooms</th>
+            <th>Bedrooms</th>
+            <th>Beds</th>
+            <th>Price</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+      <!-- 
+       The `defer` attribute causes the callback to execute after the full HTML
+       document has been parsed. For non-blocking uses, avoiding race conditions,
+       and consistent behavior across browsers, consider loading using Promises
+       with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+      -->
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdR4qNHUGc5d_OrRlCQfziX-cA_R4tfh0">
+      </script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+      <script src="static/js/data.js"></script>
+      <script src="static/js/buildMap.js"></script>
+      <script src="static/js/app.js"></script>
+
+      <!-- <script src="static/js/app.js"></script> -->
+</body>
+</html>
